@@ -29,7 +29,8 @@ DE_Project2_Tiki_Product_Fetch/
 ├── errors_tiki_total.log      # 1058 failed fetches (mostly 404)
 ├── product_ids.txt            # Full cleaned 200,000 product IDs
 │
-└── README.md ```
+└── README.md
+```
 
 
 Output Data
@@ -71,13 +72,13 @@ After all workers finish, merge and clean the outputs
 	•	Remove duplicate product IDs
 	•	Save to products_all_dedup.json
 
-Final Summary (Results Overview)
 
-Tổng quan dữ liệu:
-	•	Tổng số ID đầu vào: 200,000
-	•	Lấy dữ liệu thành công: 198,942  (≈ 99.47%)
-	•	Lỗi (404, timeout, v.v.): 1,058  (≈ 0.53%)
-	•	Dữ liệu hợp lệ sau loại trùng: 198,942
+Final Summary (Results Overview)
+Data Overview:
+	•	Total input product IDs: 200,000
+	•	✅ Successfully fetched: 198,942 (≈ 99.47%)
+	•	⚠️ Failed fetches (404, timeout, etc.): 1,058 (≈ 0.53%)
+	•	🧹 Valid records after deduplication: 198,942
 
 
 
@@ -97,6 +98,7 @@ Tính năng chính
 	•	Thông báo Discord khi bị crash hoặc dừng bằng tay.
 	•	Hợp nhất dữ liệu thành file cuối cùng products_all_dedup.json.
 
+```
 DE_Project2_Tiki_Product_Fetch/
 │
 ├── tiki_fetch.py              # File chính (script gốc)
@@ -108,6 +110,7 @@ DE_Project2_Tiki_Product_Fetch/
 ├── errors_tiki_total.log      # 1058 lỗi (chủ yếu 404)
 │
 └── README.md
+```
 
 
 Kết quả thu thập
@@ -145,12 +148,15 @@ Sau khi cả 4 tiến trình hoàn tất, chạy:
 	•	Gộp tất cả sản phẩm lại
 	•	Loại bỏ ID trùng
 	•	Xuất ra products_all_dedup.json
-	
 
-Thông tin  							 Số lượng 		  Tỷ lệ
-Lấy dữ liệu thành công 			 200,000 		  100%
-Lỗi (404, timeout, v.v.)			 198,942          99.47%
-Sản phẩm hợp lệ sau loại trùng		   1,058             0.53%
+	
+Final Summary (Results Overview)
+
+Tổng quan dữ liệu:
+	•	Tổng số ID đầu vào: 200,000
+	•	Lấy dữ liệu thành công: 198,942  (≈ 99.47%)
+	•	Lỗi (404, timeout, v.v.): 1,058  (≈ 0.53%)
+	•	Dữ liệu hợp lệ sau loại trùng: 198,942
 
 
 
