@@ -69,6 +69,13 @@ After all workers finish, merge and clean the outputs
 	•	Remove duplicate product IDs
 	•	Save to products_all_dedup.json
 
+Metric 								 Count 			  Percentage
+Total input product IDs              200,000 		  100%
+Successfully fetched                 198,942          99.47%
+Failed fetches (404, timeout, etc.)  1,058             0.53%
+
+
+
 
 🇻🇳 README (Tiếng Việt)
 
@@ -134,6 +141,12 @@ Sau khi cả 4 tiến trình hoàn tất, chạy:
 	•	Gộp tất cả sản phẩm lại
 	•	Loại bỏ ID trùng
 	•	Xuất ra products_all_dedup.json
+	
+
+Thông tin  							 Số lượng 		  Tỷ lệ
+Lấy dữ liệu thành công 			 200,000 		  100%
+Lỗi (404, timeout, v.v.)			 198,942          99.47%
+Sản phẩm hợp lệ sau loại trùng		   1,058             0.53%
 
 
 
