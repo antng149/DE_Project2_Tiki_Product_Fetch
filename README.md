@@ -1,4 +1,4 @@
-ENGLISH 
+```ENGLISH 
 
 Project Overview
 
@@ -15,7 +15,7 @@ Main Features
 	•	Discord Webhook: Notifies on crash or manual stop.
 	•	Final Merge Script: Combines and deduplicates all fetched JSONs into one clean dataset.
 
-```
+
 DE_Project2_Tiki_Product_Fetch/
 │
 ├── tiki_A1.py ... B2.py       # Worker scripts (parallel runs)
@@ -30,7 +30,7 @@ DE_Project2_Tiki_Product_Fetch/
 ├── product_ids.txt            # Full cleaned 200,000 product IDs
 │
 └── README.md
-```
+
 
 
 Output Data
@@ -98,7 +98,7 @@ Tính năng chính
 	•	Thông báo Discord khi bị crash hoặc dừng bằng tay.
 	•	Hợp nhất dữ liệu thành file cuối cùng products_all_dedup.json.
 
-```
+
 DE_Project2_Tiki_Product_Fetch/
 │
 ├── tiki_fetch.py              # File chính (script gốc)
@@ -110,7 +110,7 @@ DE_Project2_Tiki_Product_Fetch/
 ├── errors_tiki_total.log      # 1058 lỗi (chủ yếu 404)
 │
 └── README.md
-```
+
 
 
 Kết quả thu thập
@@ -157,6 +157,7 @@ Tổng quan dữ liệu:
 	•	Lấy dữ liệu thành công: 198,942  (≈ 99.47%)
 	•	Lỗi (404, timeout, v.v.): 1,058  (≈ 0.53%)
 	•	Dữ liệu hợp lệ sau loại trùng: 198,942
+```
 
 
 
