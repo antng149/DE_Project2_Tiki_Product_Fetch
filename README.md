@@ -15,6 +15,7 @@ Main Features
 	•	Discord Webhook: Notifies on crash or manual stop.
 	•	Final Merge Script: Combines and deduplicates all fetched JSONs into one clean dataset.
 
+```
 DE_Project2_Tiki_Product_Fetch/
 │
 ├── tiki_A1.py ... B2.py       # Worker scripts (parallel runs)
@@ -28,7 +29,8 @@ DE_Project2_Tiki_Product_Fetch/
 ├── errors_tiki_total.log      # 1058 failed fetches (mostly 404)
 ├── product_ids.txt            # Full cleaned 200,000 product IDs
 │
-└── README.md
+└── README.md ```
+
 
 Output Data
 
@@ -69,11 +71,13 @@ After all workers finish, merge and clean the outputs
 	•	Remove duplicate product IDs
 	•	Save to products_all_dedup.json
 
-Metric 								 Count 			  Percentage
-Total input product IDs              200,000 		  100%
-Successfully fetched                 198,942          99.47%
-Failed fetches (404, timeout, etc.)  1,058             0.53%
+Final Summary (Results Overview)
 
+Tổng quan dữ liệu:
+	•	Tổng số ID đầu vào: 200,000
+	•	Lấy dữ liệu thành công: 198,942  (≈ 99.47%)
+	•	Lỗi (404, timeout, v.v.): 1,058  (≈ 0.53%)
+	•	Dữ liệu hợp lệ sau loại trùng: 198,942
 
 
 
