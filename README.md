@@ -76,9 +76,9 @@ After all workers finish, merge and clean the outputs
 Final Summary (Results Overview)
 Data Overview:
 	•	Total input product IDs: 200,000
-	•	✅ Successfully fetched: 198,942 (≈ 99.47%)
-	•	⚠️ Failed fetches (404, timeout, etc.): 1,058 (≈ 0.53%)
-	•	🧹 Valid records after deduplication: 198,942
+	•	Successfully fetched: 198,942 (≈ 99.47%)
+	•	Failed fetches (404, timeout, etc.): 1,058 (≈ 0.53%)
+	•	Valid records after deduplication: 198,942
 
 
 
