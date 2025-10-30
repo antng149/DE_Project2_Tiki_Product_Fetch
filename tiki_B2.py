@@ -25,11 +25,11 @@ def notify(text: str):
 
 # ------------------ CONFIG ------------------
 API_URL_TEMPLATE = "https://api.tiki.vn/product-detail/api/v1/products/{}"
-ID_LIST_FILE = "ids_B2"
+ID_LIST_FILE = "IDS_B2.txt"
 
 OUTPUT_DIR = "output_json_B2"
 ERROR_LOG = "errors.log"
-CHECKPOINT_FILE = "checkpoint_B2.json"      # save resume point here
+CHECKPOINT_FILE = "checkpoint_B2.json"     # save resume point here
 BATCH_SIZE = 1000                       # ~1000 products per file
 CHECKPOINT_EVERY = 100                  # save progress every 100 items
 REQUEST_TIMEOUT = 6                    # seconds
@@ -231,7 +231,9 @@ def main():
         save_checkpoint(processed)
         with open(ERROR_LOG, "a", encoding="utf-8") as ef:
             ef.write(f"__FATAL__\tindex={processed}\t{e}\n")
+        # Discord ping (assumes you already have notify(msg))
         notify(f"[A1] CRASH at index={processed} | ok={ok_count} | errors={err_count} | err={e}")
+        # Re-raise so the outer autorestart loop can catch and restart
         raise
 
     print(f"[DONE] OK: {ok_count}, Errors: {err_count}")
@@ -243,4 +245,16 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    attempt = 1
+    while True:
+        try:
+            main()
+            break  # finished successfully — exit the loop
+        except KeyboardInterrupt:
+            print("[INFO] Stopped by user — not restarting.")
+            break
+        except Exception as e:
+            print(f"[AUTO] Crash caught, restarting in 2s… (attempt {attempt}) -> {e}")
+            attempt += 1
+            time.sleep(2)
+            # loop continues, re-invokes main()
